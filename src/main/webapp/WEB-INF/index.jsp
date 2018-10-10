@@ -4,14 +4,37 @@
 <head>
 
     <title>WTT onion to pessos!!</title>
-    <link rel="stylesheet">
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.3/css/bootstrap.css">
     <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <body>
-<div class="form-group">
-    <label for="formGroupExampleInput">Wprowadź kwotę</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-</div>
+
+    <div class="form-group">
+    <label for="ExampleInputPLN">Wartość w PLN:</label>
+    <input type="number" class="form-control" id="ExampleInputPLN" placeholder="PLN">
+    </div>
+
+    <div class="form-group">
+        <label for="ExampleInputData">Data:</label>
+        <input type="date" class="form-control" id="ExampleInputData" placeholder="DATA">
+    </div>
+
+    <div class="form-group">
+        <label for="sel1">Select list:</label>
+        <select class="form-control" id="sel1">
+            <option>GBP</option>
+            <option>USD</option>
+            <option>EUR</option>
+            <option>CNY</option>
+        </select>
+        <label for="ExampleInputPLN">Wartość w GBP:</label>
+        <input type="number" class="form-control" id="ExampleInputGBP" placeholder="GBP">
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-success">Przelicz</button>
+    </div>
+
 </body>
 </html>
