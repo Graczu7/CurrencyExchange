@@ -6,35 +6,53 @@
     <title>WTT onion to pessos!!</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.1.3/css/bootstrap.css">
     <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
-
 </head>
 <body>
 
-    <div class="form-group">
+<div class="form-group">
     <label for="ExampleInputPLN">Wartość w PLN:</label>
     <input type="number" class="form-control" id="ExampleInputPLN" placeholder="PLN">
-    </div>
+</div>
 
-    <div class="form-group">
-        <label for="ExampleInputData">Data:</label>
-        <input type="date" class="form-control" id="ExampleInputData" placeholder="DATA">
-    </div>
+<div class="form-group">
+    <label for="ExampleInputData">Data:</label>
+    <input type="date" class="form-control" id="ExampleInputData" placeholder="DATA">
+</div>
 
-    <div class="form-group">
-        <label for="sel1">Select list:</label>
-        <select class="form-control" id="sel1">
-            <option>GBP</option>
-            <option>USD</option>
-            <option>EUR</option>
-            <option>CNY</option>
-        </select>
-        <label for="ExampleInputPLN">Wartość w GBP:</label>
-        <input type="number" class="form-control" id="ExampleInputGBP" placeholder="GBP">
-    </div>
+<div class="form-group">
+    <label for="sel1">Select list:</label>
+    <select class="form-control" id="sel1">
+        <option>GBP</option>
+        <option>USD</option>
+        <option>EUR</option>
+        <option>CNY</option>
+    </select>
+    <label for="ExampleInputPLN">Wartość w GBP:</label>
+    <input type="number" class="form-control" id="ExampleInputGBP" placeholder="GBP">
+</div>
 
-    <div>
-        <button type="button" class="btn btn-success">Przelicz</button>
-    </div>
+<div>
+    <button type="button" class="btn btn-success" id="exchangeBtnId">Przelicz</button>
+</div>
 
 </body>
 </html>
+
+<script>
+    $('#exchangeBtnId').click(function () {
+        $.ajax({
+            type: "POST",
+            url: '/exchange/',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                value: $('#ExampleInputPLN').val(),
+                exchangeDate: $('#ExampleInputData').val(),
+                currency: $('#sel1').val()
+            }),
+            success: function (result) {
+                console.log(result);
+            }
+        })
+    });
+
+</script>
