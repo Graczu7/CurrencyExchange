@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExchangeController {
     @Autowired
     CurrencyExchangeService currencyExchangeService;
+
     @PostMapping("/exchange")
     public ResponseEntity<ExchangeResult> exchange(@RequestBody ExchangeRequest exchangeRequest) {
         ExchangeResult exchange = currencyExchangeService.exchange(exchangeRequest);

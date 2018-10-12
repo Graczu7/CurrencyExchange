@@ -1,17 +1,16 @@
 package com.example.currencyexchange.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class ExchangeRequest {
 
-    private BigDecimal value;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate exchangeDate;
     private String currency;
+    private BigDecimal value;
 
     public BigDecimal getValue() {
         return value;

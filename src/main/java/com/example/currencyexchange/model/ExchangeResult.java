@@ -6,6 +6,8 @@ import java.math.BigDecimal;
 
 public class ExchangeResult {
 
+
+    //końcowy wynik, to zwracamy na JSP
     private BigDecimal value;
     private String errror;
     private HttpStatus status;
@@ -16,26 +18,22 @@ public class ExchangeResult {
         this.status = status;
     }
 
+
     public BigDecimal getValue() {
         return value;
     }
-
     public void setValue(BigDecimal value) {
         this.value = value;
     }
-
     public String getErrror() {
         return errror;
     }
-
     public void setErrror(String errror) {
         this.errror = errror;
     }
-
     public HttpStatus getStatus() {
         return status;
     }
-
     public void setStatus(HttpStatus status) {
         this.status = status;
     }
