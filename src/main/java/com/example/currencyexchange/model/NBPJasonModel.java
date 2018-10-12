@@ -5,10 +5,10 @@ import java.util.List;
 
 public class NBPJasonModel {
 
-    public String table;
-    public String currency;
-    public String code;
-    public List<NBPJasonModel> list = new LinkedList<>();
+    private String table;
+    private String currency;
+    private String code;
+    private List<NBPJasonRateModel> list = new LinkedList<>();
 
     public String getTable() {
         return table;
@@ -34,11 +34,11 @@ public class NBPJasonModel {
         this.code = code;
     }
 
-    public List<NBPJasonModel> getList() {
+    public List<NBPJasonRateModel> getList() {
         return list;
     }
 
-    public void setList(List<NBPJasonModel> list) {
+    public void setList(List<NBPJasonRateModel> list) {
         this.list = list;
     }
 }

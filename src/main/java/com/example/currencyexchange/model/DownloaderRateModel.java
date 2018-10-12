@@ -37,4 +37,9 @@ public class DownloaderRateModel {
     public void setSuccess(Boolean success) {
         this.success = success;
     }
+
+    public DownloaderRateModel(BigDecimal rate, Boolean success){
+        this.rate = rate;
+        this.success = success;
+    }
 }

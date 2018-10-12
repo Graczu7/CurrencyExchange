@@ -5,9 +5,9 @@ import java.time.LocalDate;
 
 public class NBPJasonRateModel {
 
-    public String no;
-    public LocalDate effectiveDate;
-    public BigDecimal mid;
+    private String no;
+    private LocalDate effectiveDate;
+    private BigDecimal mid;
 
     public String getNo() {
         return no;
