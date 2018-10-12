@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ExchangeViewController {
     @GetMapping("/")
     public String getReview(){
-        return "index";
+        return "/index.jsp";
     }
 }
