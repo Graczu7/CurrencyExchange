@@ -10,7 +10,7 @@
 
 <body>
 
-<a href="admin.jsp">
+<a href="CompareCurrency.jsp">
     <button type="button" class="btn btn-outline-secondary">Compare Currency</button>
 </a>
 <a href="ExchangeMoney.jsp">
@@ -19,7 +19,7 @@
 <a href="login.jsp">
     <button type="button" class="btn btn-outline-primary">Login</button>
 </a>
-<a href="">
+<a href="register.jsp">
     <button type="button" class="btn btn-outline-secondary">Register</button>
 </a>
 <a href="/LogoutServlet">
