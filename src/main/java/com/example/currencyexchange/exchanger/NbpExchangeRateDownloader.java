@@ -1,25 +1,39 @@
 package com.example.currencyexchange.exchanger;
 
 import com.example.currencyexchange.model.DownloaderRateModel;
-import com.example.currencyexchange.model.ExchangeResult;
+import com.example.currencyexchange.model.NBPJasonModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 @Component
 public class NbpExchangeRateDownloader {
+    final String ROOT_URI ="http://api.nbp.pl/api/exchangerates/rates/A/code}/{date}/";
 
-   @Autowired
-   RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
+    boolean setStatus = false;
 
-   final String ROOT_URI ="http://localhost:8090/index.jsp";
-    public DownloaderRateModel download(String currency, LocalDate date){
-
-        //łączy się z NBP i zwraca dla danej waluty rate do dzielnia
-        return new DownloaderRateModel();
+    @Autowired
+    public NbpExchangeRateDownloader(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
     }
 
+    public DownloaderRateModel download(String currency, LocalDate date) {
+        try {
+            NBPJasonModel forObject = restTemplate.getForObject(ROOT_URI, NBPJasonModel.class);
+            NbpExchangeRateResult nbpExchangeRateResult = new NbpExchangeRateResult();
+            setStatus = true;
 
+            //łączy się z NBP i zwraca dla danej waluty rate do dzielnia
+
+        } catch(HttpClientErrorException e){
+           String error = "Connect failure";
+            System.out.println(error);
+        }
+        return ;
+    }
 }

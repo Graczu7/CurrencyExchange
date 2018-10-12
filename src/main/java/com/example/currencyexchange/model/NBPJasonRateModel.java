@@ -1,9 +1,35 @@
 package com.example.currencyexchange.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class NBPJasonRateModel {
 
     public String no;
-    public LocalDate effective
+    public LocalDate effectiveDate;
+    public BigDecimal mid;
+
+    public String getNo() {
+        return no;
+    }
+
+    public void setNo(String no) {
+        this.no = no;
+    }
+
+    public LocalDate getEffectiveDate() {
+        return effectiveDate;
+    }
+
+    public void setEffectiveDate(LocalDate effectiveDate) {
+        this.effectiveDate = effectiveDate;
+    }
+
+    public BigDecimal getMid() {
+        return mid;
+    }
+
+    public void setMid(BigDecimal mid) {
+        this.mid = mid;
+    }
 }

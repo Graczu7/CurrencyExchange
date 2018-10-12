@@ -3,7 +3,7 @@ package com.example.currencyexchange.model;
 import java.math.BigDecimal;
 
 public class DownloaderRateModel {
-
+//
     private BigDecimal rate;
     private String Error;
     private Boolean success;

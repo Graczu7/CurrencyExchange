@@ -1,4 +1,4 @@
-package com.example.currencyexchange.filters;
+package com.example.currencyexchange.model;
 
 public class User {
 

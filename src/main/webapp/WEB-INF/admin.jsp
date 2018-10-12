@@ -1,6 +1,6 @@
 <%@ page import="jsp.Customer" %>
 <%@ page import="filters.User" %>
-<%@ page import="com.example.currencyexchange.filters.User" %>
+<%@ page import="com.example.currencyexchange.model.User" %>
 <%@page language="java" contentType="text/html; charset=UTF-8"
         pageEncoding="UTF-8" %>
 <!DOCTYPE html>

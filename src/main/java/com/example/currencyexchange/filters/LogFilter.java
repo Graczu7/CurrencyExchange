@@ -1,5 +1,7 @@
 package com.example.currencyexchange.filters;
 
+import com.example.currencyexchange.model.User;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
