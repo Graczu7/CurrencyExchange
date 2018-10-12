@@ -1,58 +1,32 @@
-<!Doctype html>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="pl">
+<%@page language="java" contentType="text/html; charset=UTF-8"
+        pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
 <head>
-
-    <title>WTT onion to pessos!!</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/4.1.3/css/bootstrap.css">
-    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CurrencyExchange</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
 </head>
+
 <body>
 
-<div class="form-group">
-    <label for="ExampleInputPLN">Wartość w PLN:</label>
-    <input type="number" class="form-control" id="ExampleInputPLN" placeholder="PLN">
-</div>
+<a href="admin.jsp">
+    <button type="button" class="btn btn-outline-secondary">Compare Currency</button>
+</a>
+<a href="ExchangeMoney.jsp">
+    <button type="button" class="btn btn-outline-secondary">Exchange Currency</button>
+</a>
+<a href="login.jsp">
+    <button type="button" class="btn btn-outline-primary">Login</button>
+</a>
+<a href="">
+    <button type="button" class="btn btn-outline-secondary">Register</button>
+</a>
+<a href="/LogoutServlet">
+    <button type="button" class="btn btn-outline-success">Logout</button>
+</a>
 
-<div class="form-group">
-    <label for="ExampleInputData">Data:</label>
-    <input type="date" class="form-control" id="ExampleInputData" placeholder="DATA">
-</div>
-
-<div class="form-group">
-    <label for="sel1">Select list:</label>
-    <select class="form-control" id="sel1">
-        <option>GBP</option>
-        <option>USD</option>
-        <option>EUR</option>
-        <option>CNY</option>
-    </select>
-    <label for="ExampleInputPLN">Wartość w GBP:</label>
-    <input type="number" class="form-control" id="ExampleInputGBP" placeholder="GBP">
-</div>
-
-<div>
-    <button type="button" class="btn btn-success" id="exchangeBtnId">Przelicz</button>
-</div>
+<h2>Helooooooooooo!</h2>
 
 </body>
 </html>
-
-<script>
-    $('#exchangeBtnId').click(function () {
-        $.ajax({
-            type: "POST",
-            url: '/exchange/',
-            contentType: 'application/json',
-            data: JSON.stringify({
-                value: $('#ExampleInputPLN').val(),
-                exchangeDate: $('#ExampleInputData').val(),
-                currency: $('#sel1').val()
-            }),
-            success: function (result) {
-                console.log(result);
-            }
-        })
-    });
-
-</script>
