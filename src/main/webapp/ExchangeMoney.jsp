@@ -26,8 +26,8 @@
         <option>EUR</option>
         <option>CNY</option>
     </select>
-    <label for="ExampleInputPLN">Wartość w GBP:</label>
-    <input type="number" class="form-control" id="ExampleInputGBP" placeholder="GBP">
+    <label for="ExampleInputPLN" id="labelResultId">Wartosc w GBP</label>
+    <input type="number" class="form-control" id="ExampleInputGBP" >
 </div>
 
 <div>
@@ -38,6 +38,11 @@
 </html>
 
 <script>
+    $('#sel1').change(function () {
+        $('#labelResultId').html('');
+        $('#labelResultId').append('Wartosc w ' + $('#sel1').val());
+    });
+
     $('#exchangeBtnId').click(function () {
         $.ajax({
             type: "POST",
