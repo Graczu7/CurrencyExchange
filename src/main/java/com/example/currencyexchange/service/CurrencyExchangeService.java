@@ -18,8 +18,6 @@ public class CurrencyExchangeService {
 
     public ExchangeResult exchange(ExchangeRequest request){
         NbpExchangeRateResult result = nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
-        BigDecimal rateNBP = result.getRate();
-        BigDecimal amountToExchange = request.getValue();
         if (result.getSuccess()) {
             BigDecimal amountAfterExchange = amountToExchange.divide(rateNBP, 2, RoundingMode.HALF_UP);
             return new ExchangeResult(amountAfterExchange, HttpStatus.OK);
