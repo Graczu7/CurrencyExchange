@@ -6,7 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>CurrencyExchange</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>

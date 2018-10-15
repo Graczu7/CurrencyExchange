@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 @Service
 public class CurrencyExchangeService {
@@ -20,7 +21,7 @@ public class CurrencyExchangeService {
         BigDecimal rateNBP = result.getRate();
         BigDecimal amountToExchange = request.getValue();
         if (result.getSuccess()) {
-            BigDecimal amountAfterExchange = amountToExchange.divide(rateNBP);
+            BigDecimal amountAfterExchange = amountToExchange.divide(rateNBP, 2, RoundingMode.HALF_UP);
             return new ExchangeResult(amountAfterExchange, HttpStatus.OK);
         }
         return new ExchangeResult(result.getError(), HttpStatus.BAD_REQUEST);

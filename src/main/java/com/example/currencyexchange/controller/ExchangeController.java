@@ -18,6 +18,6 @@ public class ExchangeController {
     @PostMapping("/exchange")
     public ResponseEntity<ExchangeResult> exchange(@RequestBody ExchangeRequest exchangeRequest) {
         ExchangeResult exchange = currencyExchangeService.exchange(exchangeRequest);
-        return new ResponseEntity<>(exchange,HttpStatus.OK);
+        return new ResponseEntity<>(exchange, exchange.getStatus());
     }
 }

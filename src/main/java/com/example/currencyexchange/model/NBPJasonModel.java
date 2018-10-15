@@ -8,7 +8,7 @@ public class NBPJasonModel {
     private String table;
     private String currency;
     private String code;
-    private List<NBPJasonRateModel> list = new LinkedList<>();
+    private List<NBPJasonRateModel> rates = new LinkedList<>();
 
     public String getTable() {
         return table;
@@ -34,11 +34,11 @@ public class NBPJasonModel {
         this.code = code;
     }
 
-    public List<NBPJasonRateModel> getList() {
-        return list;
+    public List<NBPJasonRateModel> getRates() {
+        return rates;
     }
 
-    public void setList(List<NBPJasonRateModel> list) {
-        this.list = list;
+    public void setRates(List<NBPJasonRateModel> rates) {
+        this.rates = rates;
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <title>WTT onion to pessos!!</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
@@ -49,7 +49,10 @@
                 currency: $('#sel1').val()
             }),
             success: function (result) {
-                console.log(result);
+                $('#ExampleInputGBP').val(result.value)
+            },
+            error: function (result) {
+                alert(result.error)
             }
         })
     });

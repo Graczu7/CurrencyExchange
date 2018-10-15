@@ -8,12 +8,12 @@ public class ExchangeResult {
 
     //końcowy wynik, to zwracamy na JSP
     private BigDecimal value;
-    private String errror;
+    private String error;
     private HttpStatus status;
 
-    public ExchangeResult(BigDecimal value, String errror, HttpStatus status) {
+    public ExchangeResult(BigDecimal value, String error, HttpStatus status) {
         this.value = value;
-        this.errror = errror;
+        this.error = error;
         this.status = status;
     }
 
@@ -22,8 +22,8 @@ public class ExchangeResult {
         this.status = status;
     }
 
-    public ExchangeResult(String errror, HttpStatus status) {
-        this.errror = errror;
+    public ExchangeResult(String error, HttpStatus status) {
+        this.error = error;
         this.status = status;
     }
 
@@ -33,11 +33,11 @@ public class ExchangeResult {
     public void setValue(BigDecimal value) {
         this.value = value;
     }
-    public String getErrror() {
-        return errror;
+    public String getError() {
+        return error;
     }
-    public void setErrror(String errror) {
-        this.errror = errror;
+    public void setError(String error) {
+        this.error = error;
     }
     public HttpStatus getStatus() {
         return status;

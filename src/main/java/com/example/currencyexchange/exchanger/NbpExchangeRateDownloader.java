@@ -30,7 +30,7 @@ public class NbpExchangeRateDownloader {
         try {
             NBPJasonModel jasonObject = restTemplate.getForObject(ROOT_URI, NBPJasonModel.class,params);
             setStatus = true;
-            BigDecimal setRate = jasonObject.getList().get(0).getMid();
+            BigDecimal setRate = jasonObject.getRates().get(0).getMid();
             return new NbpExchangeRateResult(setRate,setStatus);
         } catch(HttpClientErrorException e) {
             String error404 = "Błędne zapytanie, sprawdź czy podana data nie wskazuje na niedzielę lub święto";
