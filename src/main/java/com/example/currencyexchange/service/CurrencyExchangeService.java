@@ -26,10 +26,3 @@ public class CurrencyExchangeService {
         return new ExchangeResult(result.getError(), HttpStatus.BAD_REQUEST);
     }
 }
-//        Utworzenie serwisu CurrencyExchangdeService
-//        Wszystknięcie serwisu do kontrolera @Autowired
-//        Utworzenie metody public ExchangeResult exchange(ExchangeRequest request) w serwisie
-//        Wywołanie metody exchange w obecnej metodzie w obiekcie ResponseEntity
-//        Utworzenie klasy NbpCurrencyExchangeDownloader w ktorym wstrzykniemy obiekt RestTemplate
-//        Utworzenie metody w NbpCurrencyExchangeDownloader o definicji public {BigDecimal rate, String error, Boolean result} download(String currency, LocalDate date)
-//        Wszykniecie powyzej klasy do serwisu

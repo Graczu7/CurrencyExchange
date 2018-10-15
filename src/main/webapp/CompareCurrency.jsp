@@ -4,7 +4,7 @@
 <head>
 
     <title>WTT onion to pessos!!</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>

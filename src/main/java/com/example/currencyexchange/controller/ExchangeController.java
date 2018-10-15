@@ -21,11 +21,3 @@ public class ExchangeController {
         return new ResponseEntity<>(exchange,HttpStatus.OK);
     }
 }
-
-//done        Utworzenie serwisu CurrencyExchangeService
-// done       Wszystknięcie serwisu do kontrolera @Autowired
-// done       Utworzenie metody public ExchangeResult exchange(ExchangeRequest request) w serwisie
-//done?       Wywołanie metody exchange w obecnej metodzie w obiekcie ResponseEntity
-//   done?     Utworzenie klasy NbpCurrencyExchangeDownloader w ktorym wstrzykniemy obiekt RestTemplate  //najpierw zrobić restTemplate?
-//        Utworzenie metody w NbpCurrencyExchangeDownloader o definicji public {BigDecimal rate, String error, Boolean result} download(String currency, LocalDate date)
-//        Wszykniecie powyzej klasy do serwisu
