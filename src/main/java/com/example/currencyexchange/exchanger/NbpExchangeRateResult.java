@@ -4,31 +4,42 @@ import java.math.BigDecimal;
 
 public class NbpExchangeRateResult {
 
-    private Boolean status;
-    private String messeageError;
-    private BigDecimal currencyValue;
+    private BigDecimal rate;
+    private String Error;
+    private Boolean success;
 
-    public Boolean getStatus() {
-        return status;
+    public NbpExchangeRateResult(BigDecimal rate, String error, Boolean success) {
+        this.rate = rate;
+        Error = error;
+        this.success = success;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public BigDecimal getRate() {
+        return rate;
     }
 
-    public String getMesseageError() {
-        return messeageError;
+    public void setRate(BigDecimal rate) {
+        this.rate = rate;
     }
 
-    public void setMesseageError(String messeageError) {
-        this.messeageError = messeageError;
+    public String getError() {
+        return Error;
     }
 
-    public BigDecimal getCurrencyValue() {
-        return currencyValue;
+    public void setError(String error) {
+        Error = error;
     }
 
-    public void setCurrencyValue(BigDecimal currencyValue) {
-        this.currencyValue = currencyValue;
+    public Boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+
+    public NbpExchangeRateResult(BigDecimal rate, Boolean success){
+        this.rate = rate;
+        this.success = success;
     }
 }

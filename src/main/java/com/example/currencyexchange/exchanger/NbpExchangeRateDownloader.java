@@ -1,40 +1,40 @@
 package com.example.currencyexchange.exchanger;
 
-import com.example.currencyexchange.model.DownloaderRateModel;
 import com.example.currencyexchange.model.NBPJasonModel;
-import com.example.currencyexchange.model.NBPJasonRateModel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+
 @Component
 public class NbpExchangeRateDownloader {
-    final String ROOT_URI ="http://api.nbp.pl/api/exchangerates/rates/A/code}/{date}/";
+    final String ROOT_URI ="http://api.nbp.pl/api/exchangerates/rates/A/{code}/{date}/";
     private final RestTemplate restTemplate;
     private boolean setStatus = false;
-    private HttpStatus status404 = HttpStatus.valueOf(404);
 
     @Autowired
     public NbpExchangeRateDownloader(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
-    public DownloaderRateModel download(String currency, LocalDate date) {
+    public NbpExchangeRateResult download(String currency, LocalDate date) {
+        Map<String, String > params = new HashMap<>();
+        params.put("code", currency);
+        params.put("date", date.toString());
+
         try {
-            NBPJasonModel jasonObject = restTemplate.getForObject(ROOT_URI, NBPJasonModel.class);
-            NbpExchangeRateResult nbpExchangeRateResult = new NbpExchangeRateResult();
+            NBPJasonModel jasonObject = restTemplate.getForObject(ROOT_URI, NBPJasonModel.class,params);
             setStatus = true;
             BigDecimal setRate = jasonObject.getList().get(0).getMid();
-            return new DownloaderRateModel(setRate,setStatus);
-        } catch(HttpClientErrorException e){
-            NbpExchangeRateResult nbpExchangeRateResultWithError = new NbpExchangeRateResult();
-           if (e.getStatusCode().equals(status404) &&)
-               return  new DownloaderRateModel();
+            return new NbpExchangeRateResult(setRate,setStatus);
+        } catch(HttpClientErrorException e) {
+            String error404 = "Błędne zapytanie, sprawdź czy podana data nie wskazuje na niedzielę lub święto";
+            return new NbpExchangeRateResult(null, error404, setStatus);
         }
-
     }
 }

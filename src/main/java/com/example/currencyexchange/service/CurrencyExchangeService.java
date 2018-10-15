@@ -2,6 +2,7 @@ package com.example.currencyexchange.service;
 
 
 import com.example.currencyexchange.exchanger.NbpExchangeRateDownloader;
+import com.example.currencyexchange.exchanger.NbpExchangeRateResult;
 import com.example.currencyexchange.model.ExchangeRequest;
 import com.example.currencyexchange.model.ExchangeResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class CurrencyExchangeService {
     NbpExchangeRateDownloader nbpExchangeRateDownloader;
 
     public ExchangeResult exchange(ExchangeRequest request){
-        nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
+        NbpExchangeRateResult result = nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
 
 
         return new ExchangeResult();
