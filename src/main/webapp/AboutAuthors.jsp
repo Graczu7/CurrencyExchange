@@ -27,10 +27,10 @@
         <td>Grzgorz</td>
         <td>Gracz</td>
         <td>
-            <a target="_blank" href="https://www.linkedin.com/in/grzegorz-gracz-077506163/" class="text-secondary">Przejdź</a>
+            <a target="_blank" href="https://www.linkedin.com/in/grzegorz-gracz-077506163/" class="text-white bg-dark">Przejdź</a>
         </td>
         <td>
-            <a target="_blank" href="https://github.com/Graczu7">Przejdź</a>
+            <a target="_blank" href="https://github.com/Graczu7" class="text-white bg-dark">Przejdź</a>
         </td>
     </tr>
     <tr>
@@ -38,10 +38,10 @@
         <td>Robert</td>
         <td>Kowal</td>
         <td>
-            <a target="_blank" href="https://www.linkedin.com/in/robert-k-a75a1a83/">Przejdź</a>
+            <a target="_blank" href="https://www.linkedin.com/in/robert-k-a75a1a83/" class="text-white bg-dark">Przejdź</a>
         </td>
         <td>
-            <a target="_blank" href="https://github.com/robertkkrakow">Przejdź</a>
+            <a target="_blank" href="https://github.com/robertkkrakow" class="text-white bg-dark">Przejdź</a>
         </td>
     </tr>
     <tr>
@@ -49,10 +49,10 @@
         <td>Artur</td>
         <td>Gurak-Brzozowski</td>
         <td>
-            <a target="_blank" href="https://www.linkedin.com/in/artur-gurak-brzozowski-72524116a/">Przejdź</a>
+            <a target="_blank" href="https://www.linkedin.com/in/artur-gurak-brzozowski-72524116a/" class="text-white bg-dark">Przejdź</a>
         </td>
         <td>
-            <a target="_blank" href="https://github.com/ArtoisGB">Przejdź</a>
+            <a target="_blank" href="https://github.com/ArtoisGB" class="text-white bg-dark">Przejdź</a>
         </td>
     </tr>
     </tbody>
