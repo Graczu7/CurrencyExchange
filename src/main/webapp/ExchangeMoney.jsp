@@ -9,7 +9,7 @@
 
 <body>
 <jsp:include page="WEB-INF/fragments/header.jsp"/>
-<div class="container mt-4">
+<div class="container mt-3">
 <div class="form-group">
     <label for="ExampleInputPLN">Wartość w PLN:</label>
     <input type="number" class="form-control" id="ExampleInputPLN" placeholder="PLN">

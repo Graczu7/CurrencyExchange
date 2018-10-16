@@ -9,7 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-
+<jsp:include page="WEB-INF/fragments/header.jsp"/>
+<div class="container mt-3">
 <table class="table table-sm table-dark">
     <thead>
     <tr>
@@ -26,7 +27,7 @@
         <td>Grzgorz</td>
         <td>Gracz</td>
         <td>
-            <a target="_blank" href="https://www.linkedin.com/in/grzegorz-gracz-077506163/">Przejdź</a>
+            <a target="_blank" href="https://www.linkedin.com/in/grzegorz-gracz-077506163/" class="text-secondary">Przejdź</a>
         </td>
         <td>
             <a target="_blank" href="https://github.com/Graczu7">Przejdź</a>
@@ -35,7 +36,7 @@
     <tr>
         <th scope="row">2</th>
         <td>Robert</td>
-        <td>Robert</td>
+        <td>Kowal</td>
         <td>
             <a target="_blank" href="https://www.linkedin.com/in/robert-k-a75a1a83/">Przejdź</a>
         </td>
@@ -56,6 +57,8 @@
     </tr>
     </tbody>
 </table>
+</div>
 
+<jsp:include page="WEB-INF/fragments/footer.jsp"/>
 </body>
 </html>

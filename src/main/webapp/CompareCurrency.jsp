@@ -15,7 +15,7 @@
 <body>
     <jsp:include page="WEB-INF/fragments/header.jsp"/>
         <div class="container mt-3">
-            <div class="container mt-1">Date</div>
+            <div class="container mt-1">Today's date: <%= (new java.util.Date()).toLocaleString()%></div>
             <table class="table table-hover">
                 <thead>
                     <tr>
