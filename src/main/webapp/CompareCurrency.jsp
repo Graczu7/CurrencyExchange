@@ -34,6 +34,11 @@
 </html>
 
 <script>
+    $('#sel1').change(function () {
+        $('#labelResultId').html('');
+        $('#labelResultId').append('Wartosc w ' + $('#sel1').val());
+    });
+
     $('#exchangeBtnId').click(function () {
         $.ajax({
             type: "POST",

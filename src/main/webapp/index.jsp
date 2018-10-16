@@ -18,6 +18,9 @@
 <a href="ExchangeMoney.jsp">
     <button type="button" class="btn btn-outline-secondary">Exchange Currency</button>
 </a>
+<a href="">
+    <button type="button" class="btn btn-outline-secondary">About Authors</button>
+</a>
 <a href="login.jsp">
     <button type="button" class="btn btn-outline-primary">Login</button>
 </a>

@@ -13,13 +13,17 @@ import java.math.RoundingMode;
 @Service
 public class CurrencyExchangeService {
 
+    private final NbpExchangeRateDownloader nbpExchangeRateDownloader;
+
     @Autowired
-    NbpExchangeRateDownloader nbpExchangeRateDownloader;
+    public CurrencyExchangeService(NbpExchangeRateDownloader nbpExchangeRateDownloader) {
+        this.nbpExchangeRateDownloader = nbpExchangeRateDownloader;
+    }
 
     public ExchangeResult exchange(ExchangeRequest request){
         NbpExchangeRateResult result = nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
         if (result.getSuccess()) {
-            BigDecimal amountAfterExchange = amountToExchange.divide(rateNBP, 2, RoundingMode.HALF_UP);
+            BigDecimal amountAfterExchange = request.getValue().divide(result.getRate(), 2, RoundingMode.HALF_UP);
             return new ExchangeResult(amountAfterExchange, HttpStatus.OK);
         }
         return new ExchangeResult(result.getError(), HttpStatus.BAD_REQUEST);
