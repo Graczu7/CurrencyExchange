@@ -9,6 +9,8 @@
     <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+<jsp:include page="WEB-INF/fragments/header.jsp"/>
+<div class="container mt-3">
 <form action="LoginServlet" method="POST">
 
     <div class="form-group">
@@ -23,5 +25,7 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
+</div>
+<jsp:include page="WEB-INF/fragments/footer.jsp"/>
 </body>
 </html>
