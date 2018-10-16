@@ -18,7 +18,7 @@
 <a href="ExchangeMoney.jsp">
     <button type="button" class="btn btn-outline-secondary">Exchange Currency</button>
 </a>
-<a href="">
+<a href="AboutAuthors.jsp">
     <button type="button" class="btn btn-outline-secondary">About Authors</button>
 </a>
 <a href="login.jsp">
