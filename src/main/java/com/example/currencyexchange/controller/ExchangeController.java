@@ -4,7 +4,6 @@ import com.example.currencyexchange.model.ExchangeRequest;
 import com.example.currencyexchange.model.ExchangeResult;
 import com.example.currencyexchange.service.CurrencyExchangeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,4 +19,5 @@ public class ExchangeController {
         ExchangeResult exchange = currencyExchangeService.exchange(exchangeRequest);
         return new ResponseEntity<>(exchange, exchange.getStatus());
     }
+
 }

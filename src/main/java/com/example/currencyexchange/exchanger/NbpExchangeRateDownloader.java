@@ -26,7 +26,6 @@ public class NbpExchangeRateDownloader {
         Map<String, String > params = new HashMap<>();
         params.put("code", currency);
         params.put("date", date.toString());
-
         try {
             NBPJasonModel jasonObject = restTemplate.getForObject(ROOT_URI, NBPJasonModel.class,params);
             setStatus = true;

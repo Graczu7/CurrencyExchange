@@ -28,4 +28,16 @@ public class CurrencyExchangeService {
         }
         return new ExchangeResult(result.getError(), HttpStatus.BAD_REQUEST);
     }
+
+
+    public ExchangeResult compareCurrency(ExchangeRequest request){
+        NbpExchangeRateResult result = nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
+        if (result.getSuccess()) {
+            BigDecimal amountAfterExchange = request.getValue();
+            return new ExchangeResult(amountAfterExchange, HttpStatus.OK);
+        }
+        return new ExchangeResult(result.getError(), HttpStatus.BAD_REQUEST);
+    }
+
+
 }
