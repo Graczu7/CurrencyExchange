@@ -11,7 +11,8 @@
 </head>
 
 <body>
-
+<jsp:include page="WEB-INF/fragments/header.jsp"/>
+<div class="container mt-4">
 <a href="CompareCurrency.jsp">
     <button type="button" class="btn btn-outline-secondary">Compare Currency</button>
 </a>
@@ -31,7 +32,9 @@
     <button type="button" class="btn btn-outline-success">Logout</button>
 </a>
 
-<h2>Helooooooooooo!</h2>
+</div>
 
+<jsp:include page="WEB-INF/fragments/footer.jsp"/>
 </body>
+
 </html>
