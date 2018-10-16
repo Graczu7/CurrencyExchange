@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebFilter(urlPatterns = "/admin.jsp")
+@WebFilter(urlPatterns = "    ?    ")
 public class AuthenticationFilter implements Filter {
     public void destroy() {
     }

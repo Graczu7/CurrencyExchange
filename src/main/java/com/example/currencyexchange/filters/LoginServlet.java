@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
 
         request.getSession(true).setAttribute("user", user);
 
-        request.getRequestDispatcher("admin.jsp").forward(request, response);
+        request.getRequestDispatcher("   ?   ").forward(request, response);
 
     }
 }

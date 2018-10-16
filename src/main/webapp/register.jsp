@@ -11,7 +11,7 @@
 <body>
 <jsp:include page="WEB-INF/fragments/header.jsp"/>
 <div class="container mt-3">
-<form action="/mainRegister.jsp" method="POST">
+<form action="   ?   " method="POST">
 
 
     <div class="form-group">
