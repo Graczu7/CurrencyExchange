@@ -1,58 +1,39 @@
-<!Doctype html>
+<%--
+  Created by IntelliJ IDEA.
+  User: Robert
+  Date: 16/10/2018
+  Time: 19:05
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="pl">
+<html>
 <head>
-
-    <title>WTT onion to pessos!!</title>
+    <title>Currency table</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-
-<div class="form-group">
-    <label for="ExampleInputData">Data:</label>
-    <input type="date" class="form-control" id="ExampleInputData" placeholder="DATA">
-</div>
-
-<div class="form-group">
-    <label for="sel1">Select list:</label>
-    <select class="form-control" id="sel1">
-        <option>GBP</option>
-        <option>USD</option>
-        <option>EUR</option>
-        <option>CNY</option>
-    </select>
-    <label for="">Stosunek do PLN:</label> // "..."<---do poprawy!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    <input type="number" class="form-control" id="ExampleInputGBP" placeholder="GBP">
-</div>
-
-<div>
-    <button type="button" class="btn btn-success" id="exchangeBtnId">Przelicz</button>
-</div>
-
+    <jsp:include page="WEB-INF/fragments/header.jsp"/>
+        <div class="container mt-3">
+            <div class="container mt-1">Date</div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Currency name</th>
+                        <th>Purchase</th>
+                        <th>Sale</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    <jsp:include page="WEB-INF/fragments/footer.jsp"/>
 </body>
 </html>
-
-<script>
-    $('#sel1').change(function () {
-        $('#labelResultId').html('');
-        $('#labelResultId').append('Wartosc w ' + $('#sel1').val());
-    });
-
-    $('#exchangeBtnId').click(function () {
-        $.ajax({
-            type: "POST",
-            url: '/exchange/',
-            contentType: 'application/json',
-            data: JSON.stringify({
-                value: $('#ExampleInputPLN').val(),
-                exchangeDate: $('#ExampleInputData').val(),
-                currency: $('#sel1').val()
-            }),
-            success: function (result) {
-                console.log(result);
-            }
-        })
-    });
-
-</script>

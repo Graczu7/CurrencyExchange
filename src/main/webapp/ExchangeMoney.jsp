@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
-<body>
 
+<body>
+<jsp:include page="WEB-INF/fragments/header.jsp"/>
+<div class="container mt-4">
 <div class="form-group">
     <label for="ExampleInputPLN">Wartość w PLN:</label>
     <input type="number" class="form-control" id="ExampleInputPLN" placeholder="PLN">
@@ -33,7 +35,8 @@
 <div>
     <button type="button" class="btn btn-success" id="exchangeBtnId">Przelicz</button>
 </div>
-
+</div>
+<jsp:include page="WEB-INF/fragments/footer.jsp"/>
 </body>
 </html>
 
