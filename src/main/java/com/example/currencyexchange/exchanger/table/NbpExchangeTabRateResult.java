@@ -6,37 +6,13 @@ import java.util.List;
 
 public class NbpExchangeTabRateResult {
 
-    private List<NbpExchangeTabRateResponse> rates = new LinkedList<>();
-    private String Error;
+    private List<NbpExchangeTabRateResponse> rates;
+    private String error;
     private Boolean success;
 
-    public NbpExchangeTabRateResult(List<NbpExchangeTabRateResult> rates, String error, Boolean success) {
+    public NbpExchangeTabRateResult(List<NbpExchangeTabRateResponse> rates, String error, Boolean success) {
         this.rates = rates;
-        Error = error;
-        this.success = success;
-    }
-
-    public List<NbpExchangeTabRateResult> getRates() {
-        return rates;
-    }
-
-    public void setRates(List<NbpExchangeTabRateResult> rates) {
-        this.rates = rates;
-    }
-
-    public String getError() {
-        return Error;
-    }
-
-    public void setError(String error) {
-        Error = error;
-    }
-
-    public Boolean getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(Boolean success) {
+        this.error = error;
         this.success = success;
     }
 }
