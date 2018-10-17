@@ -1,9 +1,13 @@
 package com.example.currencyexchange.exchanger.table;
 
-import java.math.BigDecimal;
-import java.util.LinkedList;
+import lombok.Getter;
+import lombok.Setter;
+
+
 import java.util.List;
 
+@Getter
+@Setter
 public class NbpExchangeTabRateResult {
 
     private List<NbpExchangeTabRateResponse> rates;
@@ -14,5 +18,9 @@ public class NbpExchangeTabRateResult {
         this.rates = rates;
         this.error = error;
         this.success = success;
+    }
+
+    public NbpExchangeTabRateResult(String error) {
+        this.error = error;
     }
 }
