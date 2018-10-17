@@ -17,7 +17,7 @@ public class ExchangeViewController {
     }
 
 
-    @GetMapping("/") //  @GetMapping("/CompareCurrency")
+    @GetMapping("/CompareCurrency") //  @GetMapping("/CompareCurrency")
     public String getReviewSecond (Model model){
         List<String> listValues = new LinkedList<>();
         listValues.add("USD");

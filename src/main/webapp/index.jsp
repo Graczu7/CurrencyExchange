@@ -21,15 +21,6 @@
 <a href="AboutAuthors.jsp">
     <button type="button" class="btn btn-outline-secondary">About Authors</button>
 </a>
-<a href="login.jsp">
-    <button type="button" class="btn btn-outline-primary">Login</button>
-</a>
-<a href="register.jsp">
-    <button type="button" class="btn btn-outline-secondary">Register</button>
-</a>
-<a href="/LogoutServlet">
-    <button type="button" class="btn btn-outline-success">Logout</button>
-</a>
 
 </div>
 
