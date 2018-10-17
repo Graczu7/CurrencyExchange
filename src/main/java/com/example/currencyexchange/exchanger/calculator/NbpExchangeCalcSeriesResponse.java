@@ -1,14 +1,14 @@
-package com.example.currencyexchange.model;
+package com.example.currencyexchange.exchanger.calculator;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class NBPJasonModel {
+public class NbpExchangeCalcSeriesResponse {
 
     private String table;
     private String currency;
     private String code;
-    private List<NBPJasonRateModel> rates = new LinkedList<>();
+    private List<NbpExchangeCalcRateResponse> rates = new LinkedList<>();
 
     public String getTable() {
         return table;
@@ -34,11 +34,11 @@ public class NBPJasonModel {
         this.code = code;
     }
 
-    public List<NBPJasonRateModel> getRates() {
+    public List<NbpExchangeCalcRateResponse> getRates() {
         return rates;
     }
 
-    public void setRates(List<NBPJasonRateModel> rates) {
+    public void setRates(List<NbpExchangeCalcRateResponse> rates) {
         this.rates = rates;
     }
 }

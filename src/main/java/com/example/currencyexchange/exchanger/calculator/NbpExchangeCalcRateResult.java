@@ -1,14 +1,14 @@
-package com.example.currencyexchange.exchanger;
+package com.example.currencyexchange.exchanger.calculator;
 
 import java.math.BigDecimal;
 
-public class NbpExchangeRateResult {
+public class NbpExchangeCalcRateResult {
 
     private BigDecimal rate;
     private String Error;
     private Boolean success;
 
-    public NbpExchangeRateResult(BigDecimal rate, String error, Boolean success) {
+    public NbpExchangeCalcRateResult(BigDecimal rate, String error, Boolean success) {
         this.rate = rate;
         Error = error;
         this.success = success;
@@ -38,7 +38,7 @@ public class NbpExchangeRateResult {
         this.success = success;
     }
 
-    public NbpExchangeRateResult(BigDecimal rate, Boolean success){
+    public NbpExchangeCalcRateResult(BigDecimal rate, Boolean success){
         this.rate = rate;
         this.success = success;
     }

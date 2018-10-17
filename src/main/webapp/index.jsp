@@ -12,15 +12,15 @@
 <body>
 <jsp:include page="WEB-INF/fragments/header.jsp"/>
 <div class="container mt-3">
-<a href="CompareCurrency.jsp">
-    <button type="button" class="btn btn-outline-secondary">Compare Currency</button>
-</a>
-<a href="ExchangeMoney.jsp">
-    <button type="button" class="btn btn-outline-secondary">Exchange Currency</button>
-</a>
-<a href="AboutAuthors.jsp">
-    <button type="button" class="btn btn-outline-secondary">About Authors</button>
-</a>
+    <a href="CompareCurrency.jsp">
+        <button type="button" class="btn btn-outline-secondary">Compare Currency</button>
+    </a>
+    <a href="ExchangeMoney.jsp">
+        <button type="button" class="btn btn-outline-secondary">Exchange Currency</button>
+    </a>
+    <a href="AboutAuthors.jsp">
+        <button type="button" class="btn btn-outline-secondary">About Authors</button>
+    </a>
 
 </div>
 

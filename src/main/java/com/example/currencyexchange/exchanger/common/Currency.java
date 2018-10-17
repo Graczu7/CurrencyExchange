@@ -1,4 +1,4 @@
-package com.example.currencyexchange.model;
+package com.example.currencyexchange.exchanger.common;
 
 public enum Currency {
     THB, USD, AUD, HKD, CAD, NZD, SGD, EUR, HUF, CHF, GBP, UAH, JPY, CZK, DKK, ISK, NOK,

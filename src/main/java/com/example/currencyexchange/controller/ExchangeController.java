@@ -1,7 +1,7 @@
 package com.example.currencyexchange.controller;
 
-import com.example.currencyexchange.model.ExchangeRequest;
-import com.example.currencyexchange.model.ExchangeResult;
+import com.example.currencyexchange.exchanger.calculator.ExchangeRequest;
+import com.example.currencyexchange.exchanger.calculator.ExchangeResult;
 import com.example.currencyexchange.service.CurrencyExchangeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

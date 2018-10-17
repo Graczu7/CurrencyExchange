@@ -1,9 +1,9 @@
 package com.example.currencyexchange.service;
 
-import com.example.currencyexchange.exchanger.NbpExchangeRateDownloader;
-import com.example.currencyexchange.exchanger.NbpExchangeRateResult;
-import com.example.currencyexchange.model.ExchangeRequest;
-import com.example.currencyexchange.model.ExchangeResult;
+import com.example.currencyexchange.exchanger.common.NbpExchangeRateDownloader;
+import com.example.currencyexchange.exchanger.calculator.NbpExchangeCalcRateResult;
+import com.example.currencyexchange.exchanger.calculator.ExchangeRequest;
+import com.example.currencyexchange.exchanger.calculator.ExchangeResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,7 @@ public class CurrencyExchangeService {
     }
 
     public ExchangeResult exchange(ExchangeRequest request){
-        NbpExchangeRateResult result = nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
+        NbpExchangeCalcRateResult result = nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
         if (result.getSuccess()) {
             BigDecimal amountAfterExchange = request.getValue().divide(result.getRate(), 2, RoundingMode.HALF_UP);
             return new ExchangeResult(amountAfterExchange, HttpStatus.OK);
@@ -31,7 +31,7 @@ public class CurrencyExchangeService {
 
 
     public ExchangeResult compareCurrency(ExchangeRequest request){
-        NbpExchangeRateResult result = nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
+        NbpExchangeCalcRateResult result = nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
         if (result.getSuccess()) {
             BigDecimal amountAfterExchange = request.getValue();
             return new ExchangeResult(amountAfterExchange, HttpStatus.OK);

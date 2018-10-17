@@ -1,6 +1,7 @@
-package com.example.currencyexchange.exchanger;
+package com.example.currencyexchange.exchanger.common;
 
-import com.example.currencyexchange.model.NBPJasonModel;
+import com.example.currencyexchange.exchanger.calculator.NbpExchangeCalcRateResult;
+import com.example.currencyexchange.exchanger.calculator.NbpExchangeCalcSeriesResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
@@ -22,18 +23,18 @@ public class NbpExchangeRateDownloader {
         this.restTemplate = restTemplate;
     }
 
-    public NbpExchangeRateResult download(String currency, LocalDate date) {
+    public NbpExchangeCalcRateResult download(String currency, LocalDate date) {
         Map<String, String > params = new HashMap<>();
         params.put("code", currency);
         params.put("date", date.toString());
         try {
-            NBPJasonModel jasonObject = restTemplate.getForObject(ROOT_URI, NBPJasonModel.class,params);
+            NbpExchangeCalcSeriesResponse jasonObject = restTemplate.getForObject(ROOT_URI, NbpExchangeCalcSeriesResponse.class,params);
             setStatus = true;
             BigDecimal setRate = jasonObject.getRates().get(0).getMid();
-            return new NbpExchangeRateResult(setRate,setStatus);
+            return new NbpExchangeCalcRateResult(setRate,setStatus);
         } catch(HttpClientErrorException e) {
             String error404 = "Błędne zapytanie, sprawdź czy podana data nie wskazuje na niedzielę lub święto";
-            return new NbpExchangeRateResult(null, error404, setStatus);
+            return new NbpExchangeCalcRateResult(null, error404, setStatus);
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.example.currencyexchange.controller;
 
-import com.example.currencyexchange.model.Currency;
+import com.example.currencyexchange.exchanger.common.Currency;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

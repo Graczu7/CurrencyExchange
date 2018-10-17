@@ -1,9 +1,9 @@
-package com.example.currencyexchange.model;
+package com.example.currencyexchange.exchanger.calculator;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class NBPJasonRateModel {
+public class NbpExchangeCalcRateResponse {
 
     private String no;
     private LocalDate effectiveDate;
