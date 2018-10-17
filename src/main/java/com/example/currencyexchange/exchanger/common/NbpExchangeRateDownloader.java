@@ -41,20 +41,20 @@ public class NbpExchangeRateDownloader {
         }
     }
 
-    public NbpExchangeTabRateResult download(LocalDate tradingdate, String rates) {
-        Map<String, String > params = new HashMap<>();
-        params.put("tradingDate", tradingdate.toString());
-        params.put("rates", rates);
-        try {
-            NbpExchangeTabRateResponse jsonObject = restTemplate.getForObject(NBP_RATES_URI, NbpExchangeTabRateResponse.class,params);
-            setStatus = true;
-            BigDecimal getRates = jsonObject.getRates().get(0).getMid();
-            return new NbpExchangeTabRateResult(getRates, setStatus);
-        } catch(HttpClientErrorException e) {
-            String error404 = "Wrong requested date";
-            return new NbpExchangeTabRateResult(null, error404, setStatus);
-        }
-    }
+//    public NbpExchangeTabRateResult download(LocalDate tradingdate, String rates) {
+//        Map<String, String > params = new HashMap<>();
+//        params.put("tradingDate", tradingdate.toString());
+//        params.put("rates", rates);
+//        try {
+//            NbpExchangeTabRateResponse jsonObject = restTemplate.getForObject(NBP_RATES_URI, NbpExchangeTabRateResponse.class,params);
+//            setStatus = true;
+//            BigDecimal getRates = jsonObject.getRates().get(0).getMid();
+//            return new NbpExchangeTabRateResult(getRates, setStatus);
+//        } catch(HttpClientErrorException e) {
+//            String error404 = "Wrong requested date";
+//            return new NbpExchangeTabRateResult(null, error404, setStatus);
+//        }
+//    }
 
 
 }
