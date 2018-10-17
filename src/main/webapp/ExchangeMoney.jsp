@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!Doctype html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="pl">
@@ -23,10 +24,9 @@
     <div class="form-group">
         <label for="sel1">Select list:</label>
         <select class="form-control" id="sel1">
-            <option>GBP</option>
-            <option>USD</option>
-            <option>EUR</option>
-            <option>CNY</option>
+            <c:forEach var="currency" items="${currencies}">
+                <option>${currency}</option>
+            </c:forEach>
         </select>
         <label for="ExampleInputPLN" id="labelResultId">Wartosc w GBP</label>
         <input type="number" class="form-control" id="ExampleInputGBP">

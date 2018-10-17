@@ -19,12 +19,7 @@ public class ExchangeViewController {
 
     @GetMapping("/CompareCurrency") //  @GetMapping("/CompareCurrency")
     public String getReviewSecond (Model model){
-        List<String> listValues = new LinkedList<>();
-        listValues.add("USD");
-        listValues.add("EUR");
-        listValues.add("CHF");
-        listValues.add("GBP");
-        model.addAttribute("currencies", listValues );   //  dobrze?
+        model.addAttribute("currencies", Currency.values() );   //  dobrze?    NIE
         return "/CompareCurrency.jsp";
     }
     //mapowanie na /table
