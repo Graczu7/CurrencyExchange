@@ -17,12 +17,14 @@ public class ExchangeViewController {
 
     @GetMapping("/CompareCurrency") //  @GetMapping("/CompareCurrency")
     public String getReviewSecond (Model model){
+        model.addAttribute("currencies", Currency.values() );
         return "CompareCurrency.jsp";
+
     }
 
     @GetMapping("/ExchangeMoney")
     public String getExchangeMoneyView(Model model){
-        model.addAttribute("currencies", Currency.values() );   //
+        model.addAttribute("currencies", Currency.values() );
         return "ExchangeMoney.jsp";
     }
     //mapowanie na /table

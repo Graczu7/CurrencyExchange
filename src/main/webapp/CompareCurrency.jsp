@@ -1,10 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Robert
-  Date: 16/10/2018
-  Time: 19:05
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!Doctype html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -27,7 +22,16 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>...</td>
+                        <td>
+                            <div class="form-group">
+                            <label for="sel1">Select list:</label>
+                            <select class="form-control" id="sel1">
+                                <c:forEach var="currency" items="${currencies}">
+                                    <option>${currency}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        </td>
                         <td>...</td>
                         <td>...</td>
                     </tr>

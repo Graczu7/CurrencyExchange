@@ -28,8 +28,8 @@
                 <option>${currency}</option>
             </c:forEach>
         </select>
-        <label for="ExampleInputPLN" id="labelResultId">Wartosc w GBP</label>
-        <input type="number" class="form-control" id="ExampleInputGBP">
+        <label for="ExampleInputPLN" id="labelResultId">Wartosc </label>
+        <input type="number" class="form-control" id="ExampleInputGBP" readonly>
     </div>
 
     <div>
