@@ -12,10 +12,10 @@
 <body>
 <jsp:include page="WEB-INF/fragments/header.jsp"/>
 <div class="container mt-3">
-    <a href="CompareCurrency.jsp">
+    <a href="/CompareCurrency">
         <button type="button" class="btn btn-outline-secondary">Compare Currency</button>
     </a>
-    <a href="ExchangeMoney.jsp">
+    <a href="/ExchangeMoney">
         <button type="button" class="btn btn-outline-secondary">Exchange Currency</button>
     </a>
     <a href="AboutAuthors.jsp">
