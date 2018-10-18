@@ -1,5 +1,4 @@
 package com.example.currencyexchange.exchanger.calculator;
-
 import java.util.LinkedList;
 import java.util.List;
 

@@ -5,15 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @Controller
 public class ExchangeViewController {
-    @GetMapping("/")
+    @GetMapping("/")  //?
     public String getReview(Model model){
         model.addAttribute("currencies", Currency.values());
         return "index.jsp";
     }
-
 
     @GetMapping("/CompareCurrency") //  @GetMapping("/CompareCurrency")
     public String getReviewSecond (Model model){

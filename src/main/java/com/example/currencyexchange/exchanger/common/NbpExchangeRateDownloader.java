@@ -48,21 +48,16 @@ public class NbpExchangeRateDownloader {
 
 
     public NbpExchangeTabRateResult downloadCurrentCourses(LocalDate exchangeDate) {
-
         Map<String, String> param = new HashMap<>();
         param.put("date", exchangeDate.toString());
-
         try {
-
             ResponseEntity<List<NbpExchangeTabRateResult>> exchange = restTemplate.exchange("http://api.nbp.pl/api/exchangerates/tables/C/{date}/",
                     HttpMethod.GET, null, new ParameterizedTypeReference<List<NbpExchangeTabRateResult>>() {
                     }, param);
-
             List<NbpExchangeTabRateResponse> rates = exchange.getBody().get(0).getRates();
             String error404 = "Wrong requested date";
             NbpExchangeTabRateResult result = new NbpExchangeTabRateResult(rates, error404, null);
             return result;
-
         } catch (HttpClientErrorException e) {
             if (e.getStatusCode() == HttpStatus.NOT_FOUND && e.getStatusText().contains("Not Found")) {
                 return new NbpExchangeTabRateResult("Client error");
@@ -71,9 +66,7 @@ public class NbpExchangeRateDownloader {
             } else if (e.getStatusCode().equals("400") && e.getStatusText().equals(" Invalid date range")) {
                 return new NbpExchangeTabRateResult("Invalid date range");
             }
-
         }
-
         return null;
     }
 

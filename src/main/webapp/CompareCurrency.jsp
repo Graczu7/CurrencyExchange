@@ -10,7 +10,7 @@
 <body>
     <jsp:include page="WEB-INF/fragments/header.jsp"/>
         <div class="container mt-3">
-            <div class="container mt-1">Today's date: <%= (new java.util.Date()).toLocaleString()%></div>
+            <input id="actualDateId" class="form-control container mt-1" value="2018-10-14" readonly>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -41,3 +41,13 @@
     <jsp:include page="WEB-INF/fragments/footer.jsp"/>
 </body>
 </html>
+
+<script>
+    $(document).ready(function () {
+
+        setTimeout(function () {
+            $('#actualDateId').val(new Date())
+        }, 2000);
+    });
+
+</script>

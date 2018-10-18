@@ -20,4 +20,6 @@ public class ExchangeController {
         return new ResponseEntity<>(exchange, exchange.getStatus());
     }
 
+    //@PostMapping("/compareCurrency")
+
 }
