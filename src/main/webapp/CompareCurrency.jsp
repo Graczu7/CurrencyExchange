@@ -20,21 +20,8 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                            <label for="sel1">Select list:</label>
-                            <select class="form-control" id="sel1">
-                                <c:forEach var="currency" items="${currencies}">
-                                    <option>${currency}</option>
-                                </c:forEach>
-                            </select>
-                        </div>
-                        </td>
-                        <td>...</td>
-                        <td>...</td>
-                    </tr>
+                <tbody id="contentWrapperId">
+
                 </tbody>
             </table>
         </div>
@@ -43,6 +30,11 @@
 </html>
 
 <script>
+    var trHTML = '';
+    $.each(data.currency, function (i, value) {
+        trHTML += '<tr><td>' + value.code + '</td><td>' + (value.ask)*0.95 + '</td><td>' + value.ask + '</td></tr>';
+    });
+    $('#contentWrapperId').append(trHTML);
     $(document).ready(function () {
 
         setTimeout(function () {
