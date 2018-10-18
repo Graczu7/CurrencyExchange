@@ -30,7 +30,7 @@
             <a target="_blank" href="https://www.linkedin.com/in/grzegorz-gracz-077506163/" class="text-secondary">Przejdź</a>
         </td>
         <td>
-            <a target="_blank" href="https://github.com/Graczu7">Przejdź</a>
+            <a target="_blank" href="https://www.linkedin.com/in/grzegorz-gracz-077506163/" class="text-white bg-dark">Przejdź</a>
         </td>
     </tr>
     <tr>
