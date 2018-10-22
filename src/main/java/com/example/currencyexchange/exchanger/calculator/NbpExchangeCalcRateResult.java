@@ -3,7 +3,7 @@ package com.example.currencyexchange.exchanger.calculator;
 import java.math.BigDecimal;
 
 public class NbpExchangeCalcRateResult {
-
+//?
     private BigDecimal rate;
     private String Error;
     private Boolean success;

@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class NbpExchangeCalcRateResponse {
-
+//lista rates z JSON
     private String no;
     private LocalDate effectiveDate;
     private BigDecimal mid;

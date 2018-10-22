@@ -26,13 +26,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception{
-        httpSecurity.authorizeRequests()
+        httpSecurity
+                .authorizeRequests()
+             //   .antMatchers("/register").permitAll()
+             //   .antMatchers("/authorization/save").permitAll()
                 .antMatchers("/exchange").permitAll()
+             //   .anyRequest().authenticated()
+            //     .and()
+             //   .formLogin()
+            //    .loginPage("/login")
+              //  .permitAll()
                 .antMatchers("/admin**").hasRole("ADMIN")
         .and().httpBasic();
 
         httpSecurity.csrf().disable();
     }
+
 
     @Bean
     public PasswordEncoder passwordEncoder(){

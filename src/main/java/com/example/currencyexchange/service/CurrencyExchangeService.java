@@ -8,6 +8,7 @@ import com.example.currencyexchange.exchanger.table.NbpExchangeTabRateResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
@@ -22,7 +23,7 @@ public class CurrencyExchangeService {
         this.nbpExchangeRateDownloader = nbpExchangeRateDownloader;
     }
 
-    public ExchangeResult exchange(ExchangeRequest request){
+    public ExchangeResult exchange(ExchangeRequest request) {
         NbpExchangeCalcRateResult result = nbpExchangeRateDownloader.download(request.getCurrency(), request.getExchangeDate());
         if (result.getSuccess()) {
             BigDecimal amountAfterExchange = request.getValue().divide(result.getRate(), 2, RoundingMode.HALF_UP);
@@ -31,14 +32,9 @@ public class CurrencyExchangeService {
         return new ExchangeResult(result.getError(), HttpStatus.BAD_REQUEST);
     }
 
-
-    public ExchangeResult compareCurrency(ExchangeRequest request){
+    public NbpExchangeTabRateResult compareCurrency() {    //
         NbpExchangeTabRateResult result = nbpExchangeRateDownloader.downloadCurrentCourses(LocalDate.now());
-        if (result.getSuccess()) {
-            BigDecimal amountAfterExchange = request.getValue();
-            return new ExchangeResult(amountAfterExchange, HttpStatus.OK);
-        }
-        return new ExchangeResult(result.getError(), HttpStatus.BAD_REQUEST);
+        return result;
     }
 
 }

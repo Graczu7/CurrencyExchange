@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class NbpExchangeCalcSeriesResponse {
-
+//obiekt Jsona
     private String table;
     private String currency;
     private String code;
