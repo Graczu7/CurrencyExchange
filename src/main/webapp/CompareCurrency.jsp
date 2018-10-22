@@ -38,16 +38,15 @@
 
 <script>
 $(document).ready(function () {
-    $('.display tbody').DataTable({
-        ajax: {
-            url: '/NbpExchangeCalcSeriesResponse',
+    $('#CurrencyListExchange').DataTable({
+        "ajax": {
+            url: '/compareCurrency',
             method: "GET"
-        }
-    },NbpExchangeCalcSeriesResponse
-        columns: [
-        {data: "b.NbpExchangeCalcSeriesResponse"},
-        {data: "b.Code"},
-        {data: "b.Code"},
+        },
+        "columns": [
+        {"rates": "code"},
+        {"rates": "bid"},
+        {"rates": "ask"}
     ]
     });
 // zrobić to inaczej? jak wcześniej
