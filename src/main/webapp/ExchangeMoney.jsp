@@ -13,28 +13,28 @@
 <jsp:include page="WEB-INF/fragments/header.jsp"/>
 <div class="container mt-3">
     <div class="form-group">
-        <label for="ExampleInputPLN">Wartość w PLN:</label>
+        <label for="ExampleInputPLN">Value in PLN:</label>
         <input type="number" class="form-control" id="ExampleInputPLN" placeholder="PLN">
     </div>
 
     <div class="form-group">
-        <label for="ExampleInputData">Data:</label>
+        <label for="ExampleInputData">Date:</label>
         <input type="date" class="form-control" id="ExampleInputData" placeholder="DATA">
     </div>
 
     <div class="form-group">
-        <label for="sel1">Select list:</label>
+        <label for="sel1">Currency:</label>
         <select class="form-control" id="sel1">
             <c:forEach var="currency" items="${currencies}">
                 <option>${currency}</option>
             </c:forEach>
         </select>
-        <label for="ExampleInputPLN" id="labelResultId">Wartosc </label>
+        <label for="ExampleInputPLN" id="labelResultId">Value:</label>
         <input type="number" class="form-control" id="ExampleInputGBP" readonly>
     </div>
 
     <div>
-        <button type="button" class="btn btn-success" id="exchangeBtnId">Przelicz</button>
+        <button type="button" class="btn btn-success" id="exchangeBtnId">Recalculate</button>
     </div>
 </div>
 <jsp:include page="WEB-INF/fragments/footer.jsp"/>
@@ -44,7 +44,7 @@
 <script>
     $('#sel1').change(function () {
         $('#labelResultId').html('');
-        $('#labelResultId').append('Wartosc w ' + $('#sel1').val());
+        $('#labelResultId').append('Value in ' + $('#sel1').val() + ':');
     });
 
     $('#exchangeBtnId').click(function () {
